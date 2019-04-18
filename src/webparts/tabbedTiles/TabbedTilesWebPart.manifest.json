@@ -21,7 +21,9 @@
     "description": { "default": "Tabbed Tiles description" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "Tabbed Tiles"
+      "description": "Tabbed Tiles",
+      "listDefinition" : "List Definition",
+      "listWebURL":  "https://yourSiteURL"
     }
   }]
 }
