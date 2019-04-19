@@ -10,12 +10,23 @@ import {
 import * as strings from 'TabbedTilesWebPartStrings';
 import TabbedTiles from './components/TabbedTiles';
 import { ITabbedTilesProps } from './components/ITabbedTilesProps';
+import { sp } from "@pnp/sp";
 
 export interface ITabbedTilesWebPartProps {
   description: string;
 }
 
 export default class TabbedTilesWebPart extends BaseClientSideWebPart<ITabbedTilesWebPartProps> {
+
+  public onInit(): Promise<void> {
+
+    return super.onInit().then(_ => {
+
+      sp.setup({
+        spfxContext: this.context
+      });
+    });
+  }
 
   public render(): void {
     const element: React.ReactElement<ITabbedTilesProps > = React.createElement(
